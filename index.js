@@ -10,7 +10,9 @@ module.exports = async function (context, req) {
     catch(err){
         response = err
     } 
-    context.res = response;
+    context.res = {
+        body: response
+    };
     function scrape(url){
         return new Promise((resolve, reject) => {
             needle.get(encodeURI(url), function(err, res) {
