@@ -25,7 +25,7 @@ module.exports = async function (context, req) {
                     if (  meta[key].attribs && meta[key].attribs.property
                     && meta[key].attribs.property.match(/og.*/)) {
                         let property =  meta[key].attribs.property.replace(/.*og:/,'')
-                        properties[property] = meta[key].attribs.content;
+                        properties[property] = meta[key].attribs.content;  // adding each property into response object
                     }
                 })
                 resolve(properties)
